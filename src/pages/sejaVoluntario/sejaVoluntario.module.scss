@@ -1,0 +1,235 @@
+@import "../../globalStyle.scss";
+
+/* ==================================== */
+/* VOLUNTARIO */
+/* ==================================== */
+
+.voluntario {
+  background-color: $cor-branco-geral;
+  color: $cor-preto;
+  padding: 4rem 6rem;
+  font-family: $fonte-principal;
+  text-align: center;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
+
+  /* ==================================== */
+  /* VOLUNTARIO - H2
+==================== */
+  .voluntario__title{
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  /* ==================================== */
+  /* VOLUNTARIO - TEXTO
+==================== */
+  &_text {
+    font-size: 1.4375rem;
+    margin-bottom: 3rem;
+    color: $cor-preto;
+    font-weight: 400;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* ==================================== */
+  /* VOLUNTARIO - CARDS
+==================== */
+  &_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      flex-direction: column;
+      align-items: center; // Centraliza os cards
+      gap: 1.5rem;      
+    }
+  }
+
+  /* ==================================== */
+  /* VOLUNTARIO - CARD
+==================== */
+  &_card {
+    border: solid 2px $cor-preto;
+    width: 28.82rem;
+    height: 9.81rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 0 2rem;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease; // Adicionei transição suave
+
+    /* ==================================== */
+    /* RESONSIVIDADE
+==================== */
+    @include mobile {    
+      width: 100%;
+    max-width: 28.82rem;   // deixa igual mas evita estourar tela
+    height: 9.81rem;       // mesma altura    
+    } 
+
+     &:hover {
+      transform: translateZ(10px) scale(1.05);
+      background-color: $cor-cinza-medio;      
+      box-shadow: 0 12px 24px $cor-verde-claro;
+      z-index: 10;
+      animation: $neon-green;
+    }
+
+
+    /* ==================================== */
+    /* VOLUNTARIO- H3
+==================== */
+    h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+
+      /* ==================================== */
+      /* RESPONSIVIDADE
+==================== */
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ==================================== */
+    /* VOLUNTARIO - P
+==================== */
+    p {
+      color: $cor-preto;
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      /* ==================================== */
+      /* RESPONSIVIDADE
+==================== */
+      @include mobile {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+
+  /* ==================================== */
+  /* FORMULÁRIO */
+  /* ==================================== */
+  .formWrapper {
+    background: $cor-verde-principal;
+    padding: 3rem 1.5rem;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    font-family: $fonte-principal;
+
+    @include mobile {
+      padding: 2rem 1rem;
+    }
+  }
+
+  .form {
+    background: $cor-branco-geral;
+    padding: 2.5rem;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 900px;
+
+    h2 {
+      font-size: 1.7rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .group {
+      margin-bottom: 2rem;
+
+      label {
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+        display: block;
+        font-size: 1.125rem;        
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 1rem;
+        background-color: $label-formulario;
+        border: 1px solid $cor-preto;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 400;
+        font-family: $fonte-principal;
+      }
+
+      textarea {
+        min-height: 150px;
+        resize: none;
+      }
+    }
+
+    .twoFields {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      @include mobile {
+        flex-direction: column;
+      }
+    }
+
+    .info {
+      text-align: center;
+      color: $cor-preto;
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btnGreen {
+      background: $cor-verde-principal;
+      color: white;
+      padding: 0.9rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      margin: 0 auto;
+
+      &:hover {
+        background: $cor-verde-escuro;
+        animation: $neon-green;
+      }
+    }
+  }

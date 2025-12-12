@@ -1,0 +1,263 @@
+@import "../../globalStyle.scss";
+
+/* ==================================== */
+/* HEADER */
+/* ==================================== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 3rem;
+  font-family: $fonte-principal;
+
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  background: $cor-branco-geral;
+}
+
+/* LOGO */
+.boxLogo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-left: 8rem;
+
+  &:hover {
+    transform: translateZ(10px) scale(1.05);  
+  }
+
+  img {
+    width: 42px;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: $cor-preto;
+    margin: 0;
+  }
+}
+
+/* ==================================== */
+/* NAV DESKTOP */
+/* ==================================== */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.425rem;
+
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    color: $cor-preto;
+    padding: 0.6rem 0.7rem;
+    border-radius: clamp(0.4rem, 1vw, 1rem);
+    transition: 0.2s ease;
+
+    &:hover {
+      color: $cor-verde-principal;
+      transform: translateY(-4px);
+      border-radius: 0.5rem;
+      box-shadow: 0 12px 24px $cor-cinza-texto;
+    }
+
+    &:nth-child(2) {
+      background-color: $cor-verde-principal;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      transition: 0.25s ease;
+
+      &:hover {
+        background: $cor-verde-claro;
+        color: $cor-cinza-texto;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px $cor-cinza-texto;
+      }
+    }
+  }
+}
+
+/* ==================================== */
+/* MOBILE AJUSTES */
+/* ==================================== */
+@include mobile {
+  .header {
+    padding: 1rem 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
+    display:flex;   
+  }
+
+  /* LOGO */
+.boxLogo {
+  padding-left: 0.2rem;  
+
+  h2 {
+    font-size: 1.15rem;
+  }
+}
+  .nav a {
+    font-size: 0.95rem;
+  } 
+}
+
+@include tablet {
+  .header {
+    padding: 1rem 1.5rem;
+    flex-direction: row;
+    gap: 1rem;
+    display:flex;   
+  }
+
+  /* LOGO */
+.boxLogo {
+  padding-left: 1rem;  
+
+  h2 {
+    font-size: 1.15rem;
+  }
+}
+  .nav a {
+    font-size: 0.95rem;
+  } 
+}
+
+
+/* ==================================== */
+/* BOTÃO HAMBÚRGUER */
+/* ==================================== */
+.mobile-toggle-btn {
+  z-index: 999;
+  padding: 0.8rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: $cor-preto;
+  transition: 0.3s ease;
+
+  &.open {
+    transform: rotate(90deg);
+  }
+}
+
+/* MOSTRAR BOTÃO APENAS EM MOBILE + TABLET */
+@include mobile {
+  .mobile-toggle-btn {
+    display: block;
+  }
+}
+
+@include tablet {
+  .mobile-toggle-btn {
+    display: block;
+  }
+}
+
+/* ESCONDER BOTÃO EM DESKTOP E ACIMA */
+@include desktop {
+  .mobile-toggle-btn {
+    display: none;
+  }
+}
+
+@include large {
+  .mobile-toggle-btn {
+    display: none;
+  }
+}
+
+/* ==================================== */
+/* MENU MOBILE */
+/* ==================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 998;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+
+  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #0f0c29cc, #31ac71cc, #24243ecc);
+   animation: $neon-green;
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+     margin-top: -10rem;    
+
+    a {
+      font-size: 1.5rem;
+      color: $cor-preto;
+      text-decoration: none;
+      font-weight: bolder;
+      text-align: center; 
+
+      &:hover {
+      background: $cor-verde-claro;
+      color: $cor-verde-principal;
+      transform: translateY(-4px);
+      border-radius: 0.5rem;
+      box-shadow: 0 12px 24px $cor-cinza-texto;
+    }      
+       &:nth-child(2) {
+      background-color: $cor-verde-principal;
+      color: white;
+      padding: 1rem;
+      border-radius: 0.8rem;
+      transition: 0.25s ease;       
+
+      &:hover {
+        background: $cor-verde-claro;
+        color: $cor-cinza-texto;
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px $cor-cinza-texto;
+      }
+    }
+  }
+}}
+
+/* MOSTRAR MENU APENAS EM MOBILE + TABLET */
+@include mobile {
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+@include tablet {
+  .mobile-menu {
+    display: flex;
+  }
+}
+
+/* ANIMAÇÃO */
+.mobile-menu.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ==================================== */
+/* ESCONDER NAV DESKTOP EM MOBILE/TABLET */
+/* ==================================== */
+@include mobile {
+  .nav {
+    display: none;
+  }
+}
+
+@include tablet {
+  .nav {
+    display: none;
+  }
+}

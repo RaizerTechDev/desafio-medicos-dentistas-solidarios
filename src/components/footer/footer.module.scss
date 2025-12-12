@@ -1,0 +1,256 @@
+@import "../../globalStyle.scss";
+
+/* ==================================== */
+/* FOOTER
+/* ==================================== */
+.footer {
+  background-color: $cor-fundo-footer;
+  color: $cor-branco-geral;
+  padding-top: 3rem; // Reduzi um pouco o padding geral
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-family: $fonte-principal;
+
+  /* ==================================== */
+  /* FOOTER - CONTAINER
+/* ==================================== */
+  .footer__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 3rem 2rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem; // Gap do Desktop
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+/* ==================================== */
+    @include mobile {
+      // Gap vertical reduzido para 1.5rem para trazer as redes sociais "mais pra cima"
+      // Gap horizontal de 1rem entre a logo e os links
+      gap: 1.5rem 1rem;
+      padding: 0 1.5rem 2rem 1.5rem;
+      align-items: flex-start;
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER - COLUNAS
+/* ==================================== */
+  .footer__col {
+    flex: 1 1 200px;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+/* ==================================== */
+    @include mobile {
+      // Calc garante 50% menos a metade do gap, mantendo lado a lado perfeito
+      flex: 0 0 calc(50% - 0.5rem);
+      max-width: calc(50% - 0.5rem);
+
+      // Impede que o conteúdo estoure a largura
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    /* ==================================== */
+    /* FOOTER - H4
+/* ==================================== */
+    h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      color: $cor-branco-geral;
+      border-bottom: 2px solid $cor-verde-principal;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER - REDES SOCIAIS COLUNA
+/* ==================================== */
+  .socialCol {
+    @include mobile {
+      flex: 0 0 100%; // Ocupa a largura total (vai para linha de baixo)
+      max-width: 100%;
+      margin-top: 0; // Garante que não tenha margem extra empurrando para baixo
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER - LOGO CONTAINER 
+/* ==================================== */
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+
+    img {
+      width: 32px;
+      height: auto;
+    }
+
+    .logoFooter {
+      font-size: 1rem;
+      font-weight: 700;
+      color: $cor-branco-geral;
+      line-height: 1.2;
+      font-family: $fonte-principal;
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER -  MARCA TEXTO
+/* ==================================== */
+  .brandText {
+    color: $cor-branco-geral;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 300px;
+  }
+
+  /* ==================================== */
+  /* FOOTER - LINKS
+/* ==================================== */
+  .footer__links {
+    list-style: none;
+
+    li {
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      svg {
+        min-width: 18px;
+      }
+
+      a {
+        color: $cor-branco-geral;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: 0.3s ease;
+        word-break: break-word; // Evita que emails longos quebrem o layout
+
+        &:hover {
+          color: $cor-verde-principal; // Destaque verde ao passar o mouse
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER - LISTA REDES SOCIAIS
+/* ==================================== */
+  .socialList {
+    list-style: none;
+
+    li {
+      margin-bottom: 0.8rem;
+
+      a {
+        color: $cor-branco-geral;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: 0.3s ease;
+        display: block; // Garante área de clique
+
+        &:hover {
+          color: $cor-verde-principal; // Destaque verde ao passar o mouse
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER - COPYRIGHT
+/* ==================================== */
+  .footer__bottom {
+    background: #050505;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+    .footer__copyright {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      /* ==================================== */
+      /*RESPONSIVIDADE
+/* ==================================== */
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      @include tablet {
+        margin-right: 2rem;
+      }
+
+      /* ==================================== */
+      /* FOOTER - P
+/* ==================================== */
+      p {
+        color: #888;
+        font-size: 0.85rem;
+        span {
+          background: linear-gradient(
+            to right,
+            $background-text-footer,
+            $background-text-footer1
+          );
+        }
+        &:hover {
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* ==================================== */
+  /* FOOTER -BTN SCROLL
+/* ==================================== */
+  .btnScrollTop {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #1a1a2e, #16213e, #0f3460);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s;
+    animation: $neon-blue;
+
+    &:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.95);
+    }
+
+    svg {
+      stroke: $cor-branco-geral; // Garante que o ícone seja branco
+    }
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+/* ==================================== */
+
+    @include mobile {
+      margin-left: auto;
+    }
+  }
+}

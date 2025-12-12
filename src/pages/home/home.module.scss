@@ -1,0 +1,556 @@
+@import "../../globalStyle.scss";
+
+/* ==================================== */
+/* HERO */
+/* ==================================== */
+.heroSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // Aumentei um pouco o padding lateral geral também para telas muito grandes
+  padding: 4rem 4rem;
+  margin: 0 auto;
+  font-family: $fonte-principal;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+/* ==================================== */
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+    overflow-x: hidden;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.2rem;
+    overflow-x: hidden;
+  }
+}
+
+/* ==================================== */
+/* HERO - TEXT AREA */
+/* ==================================== */
+.textArea {
+  flex: 1;
+
+  /* --- ALTERAÇÃO PRINCIPAL --- */
+  /* Isso empurra o texto para a direita no Desktop */
+  padding-left: 8rem;
+  max-width: 70ch;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+/* ==================================== */
+  @include mobile {
+    padding-left: 0;
+  }
+
+  @include tablet {
+    padding-left: 0;
+  }
+
+  @include desktop {
+    padding-left: 0;
+  }
+
+  /* ==================================== */
+  /* HERO -H1
+/* ==================================== */
+
+  h1 {
+    max-width: 12ch;
+    word-break: break-word;
+    font-size: 4.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    @include mobile {
+      font-size: 2.5rem;
+      max-width: 100%;
+    }
+
+    @include tablet {
+      margin: 0 auto 2rem auto;
+      max-width: 46ch;
+    }
+  }
+
+  p {
+    font-size: 1.575rem;
+    color: $cor-cinza-texto;
+    margin-bottom: 2rem;
+    max-width: 40ch;
+    line-height: 1.45;
+    padding-left: 0.7rem;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
+    @include tablet {
+      margin: 0 auto 2rem auto;
+      max-width: 46ch;      
+    }      
+  }
+}
+
+/* ==================================== */
+/* BADGE */
+/* ==================================== */
+.badgeBox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: $cor-cinza-medio;
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  width: fit-content;
+  margin-bottom: 1.5rem;
+}
+
+.badgeBox img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  object-fit: contain;
+}
+
+.badge {
+  font-size: 1.23rem;
+  font-weight: 600;
+  color: $cor-preto;
+  line-height: 1;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+/* ==================================== */
+  @include mobile {
+    text-align: center;
+  }
+}
+
+/* ==================================== */
+/* BUTTONS */
+/* ==================================== */
+.buttons {
+  display: flex;
+  gap: 1rem;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+/* ==================================== */
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    width: 100%;
+  }
+
+   @include tablet {
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+    width: 100%;
+  }
+}
+
+
+
+/* ==================================== */
+/* PRIMARY BTN | SECONDARY BTN
+/* ==================================== */
+.primaryBtn,
+.secondaryBtn {
+  @extend .btn-base;
+  font-size: 1.425rem;
+  padding: 0.9rem 1.6rem;
+  transition: 0.25s ease;
+  white-space: nowrap;
+  width: fit-content;
+  font-family: $fonte-principal;
+  border-radius: 0.7rem;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+/* ==================================== */
+  @include mobile {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* ==================================== */
+/* PRIMARY BTN
+==================== */
+.primaryBtn {
+  background: $cor-verde-principal;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background: $cor-verde-claro;
+    color: $cor-cinza-texto;
+    animation: $neon-green;
+    transform: translateY(-4px);
+  }
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    font-size: 1.188rem;
+  }
+}
+
+/* ==================================== */
+/* SECUNDARY BTN
+==================== */
+.secondaryBtn {
+  background: transparent;
+  border: 2px solid $cor-verde-principal;
+  color: $cor-verde-principal;
+
+  &:hover {
+    background: $cor-blue;
+    color: $cor-branco-geral;
+    animation: $neon-blue;
+    transform: translateY(-4px);
+  }
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    font-size: 1.188rem;
+  }
+}
+
+/* ==================================== */
+/* IMAGE AREA */
+/* ==================================== */
+.imageArea {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    max-width: 38.5rem;
+    border-radius: 12px;
+    object-fit: cover;
+    animation: $neon-green;
+  }
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    display: none;
+  }
+
+  @include tablet {
+    display: none;
+  }
+
+  @include desktop {
+    display: flex;
+
+    img {
+      width: 38vw; // <<< CORRIGIDO para evitar estourar no iPad Pro
+      max-width: 420px; // <<< segurança
+    }
+  }
+
+  @include large {
+    img {
+      width: 32vw;
+      max-width: 500px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+@include ipad {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .imageArea {
+    display: flex; // pode trocar para none se quiser esconder
+
+    img {
+      width: 70%;
+      max-width: 420px;
+      margin-top: 2rem;
+    }
+  }
+}
+
+/* ==================================== */
+/* MISSAO */
+/* ==================================== */
+
+.missao {
+  background-color: $cor-verde-escuro;
+  color: $cor-branco-geral;
+  padding: 4rem 6rem;
+  font-family: $fonte-principal;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
+
+  /* ==================================== */
+  /* MISSAO - H2
+==================== */
+  h2 {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  /* ==================================== */
+  /* MISSAO TEXTO
+==================== */
+  &_text {
+    font-size: 1.4375rem;
+    margin-bottom: 3rem;
+    color: $cor-branco-geral;
+    font-weight: 400;    
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;     
+    }
+  }
+
+  /* ==================================== */
+  /* MISSAO CARDS
+==================== */
+  &_cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      flex-direction: column;
+      align-items: center; // Centraliza os cards
+      gap: 1.5rem;      
+    }
+  }
+
+  /* ==================================== */
+  /* MISSAO- CARD
+==================== */
+  &_card {
+    border: solid 2px white;
+    width: 28rem;
+    height: 18rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 0 3rem;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease; // Adicionei transição suave
+
+    /* ==================================== */
+    /* RESONSIVIDADE
+==================== */
+    @include mobile {
+     
+      max-width: 19.81rem;   // deixa igual mas evita estourar tela
+      height: 12rem;       // mesma altura   
+    }
+
+    &:hover {
+      transform: translateZ(10px) scale(1.05);
+      background-color: $cor-verde-principal;
+      color: $cor-branco-geral;
+      box-shadow: 0 12px 24px $cor-verde-claro;
+      z-index: 10;
+      animation: $neon-green;
+    }
+
+    /* ==================================== */
+    /* MISSAO- H3
+==================== */
+    h3 {
+      font-size: 1.875rem;
+      font-weight: 700;
+
+      /* ==================================== */
+      /* RESPONSIVIDADE
+==================== */
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* ==================================== */
+    /* MISSAO- P
+==================== */
+    p {
+      color: $cor-branco-geral;
+      font-size: 1.5rem;
+      font-weight: 400;
+
+      /* ==================================== */
+      /* RESPONSIVIDADE
+==================== */
+      @include mobile {
+        font-size: 0.85rem; 
+        text-align: left;          
+        max-width: 96ch;      
+      }
+    }
+  }
+}
+
+/* ==================================== */
+/* IMPACTO
+==================== */
+.impacto {
+  background-color: $cor-branco-geral;
+  color: $cor-preto;
+  padding: 4rem 6rem;
+  font-family: $fonte-principal;
+
+  /* ==================================== */
+  /* RESPONSIVIDADE
+==================== */
+  @include mobile {
+    padding: 3rem 1.5rem;
+  }
+
+  /* ==================================== */
+  /* IMPACTO - H2
+==================== */
+  h2 {
+    font-size: 3.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  /* ==================================== */
+  /* IMPACTO - TEXTO
+==================== */
+  &_text {
+    font-size: 1.4375rem;
+    margin-bottom: 3rem;
+    color: $cor-preto;
+    font-weight: 400;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
+
+  /* ==================================== */
+  /* IMPACTO - CARDS
+==================== */
+  &__cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {
+      flex-direction: column;
+      align-items: center; // Centraliza os cards
+      gap: 1.5rem;
+    }
+  }
+
+  /* ==================================== */
+  /* IMPACTO - CARD
+==================== */
+  &__card {
+    border: solid 2px $cor-preto;
+    width: 19.81rem;
+    height: 15rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 14px;
+    padding: 0 3rem;
+    text-align: center;
+    gap: 1rem;
+    transition: all 0.3s ease; // transição suave
+
+    /* ==================================== */
+    /* RESPONSIVIDADE
+==================== */
+    @include mobile {     
+      max-width: 19.81rem;   // deixa igual mas evita estourar tela
+      height: 15rem;       // mesma altura   
+    }
+
+    &:hover {
+      transform: translateZ(10px) scale(1.05);
+      background-color: $cor-cinza-medio;      
+      box-shadow: 0 12px 24px $cor-verde-claro;
+      z-index: 10;
+      animation: $neon-green;
+    }
+
+    /* ==================================== */
+    /* IMPACTO - H3
+==================== */
+    h3 {
+      color: $cor-verde-escuro;
+      font-size: 3.125rem;
+      font-weight: 700;
+    }
+
+    /* ==================================== */
+    /* IMPACTO - P
+==================== */
+    p {
+      color: $cor-preto;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+  }
+}

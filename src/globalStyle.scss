@@ -1,0 +1,152 @@
+/* ==================================== */
+/* GLOBAL STYLES                        */
+/* ==================================== */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==================================== */
+/* VARIÁVEIS                            */
+/* ==================================== */
+
+/* Paleta principal */
+$cor-verde-principal: #00745a;
+$cor-verde-escuro: #0f6a4e;
+$cor-verde-claro: #e9f7f3;
+$cor-cinza-texto: #444;
+$cor-branco-geral: #ffffff;
+$cor-cinza-medio: #e5e5e5;
+$cor-preto: #111;
+$cor-blue: #3f8df6;
+$cor-fundo-footer: #0b0b0b;
+$background-text-footer: purple;
+$background-text-footer1: blue;
+$label-formulario: #f8f8f8;
+
+// Cores base do efeito rainbow pulse
+$neon-verde-1: rgba(0, 255, 150, 1);
+$neon-verde-2: rgb(27, 82, 55);
+
+// Cores base do efeito rainbow pulse
+$neon-azul-1: rgb(14, 179, 205);
+$neon-azul-2: rgb(22, 143, 173);
+
+// Variável que guarda o nome da animação
+$rainbow-pulse-green: rainbow-pulse-green;
+$neon-green: $rainbow-pulse-green 2s infinite ease-in-out;
+
+$rainbow-pulse-blue: rainbow-pulse-blue;
+$neon-blue: $rainbow-pulse-blue 2s infinite ease-in-out;
+
+// Tipografia
+$fonte-principal: "Inter", sans-serif;
+
+/* Breakpoints */
+$mobile-width: 768px;
+$tablet-width: 1024px;
+$large-width: 1180px;
+$xl-width: 1440px; // opcional
+
+/* MOBILE — abaixo de 768px */
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+/* TABLET — 768px até 1023px */
+@mixin tablet {
+  @media (min-width: $mobile-width) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+/* DESKTOP — 1024px até 1179px */
+@mixin desktop {
+  @media (min-width: $tablet-width) and (max-width: #{$large-width - 1px}) {
+    @content;
+  }
+}
+
+/* LARGE — de 1180px para cima */
+@mixin large {
+  @media (min-width: $large-width) {
+    @content;
+  }
+}
+
+/* iPAD (opcional e isolado) — específico para 820px até 900px */
+@mixin ipad {
+  @media (min-width: 820px) and (max-width: 900px) {
+    @content;
+  }
+}
+
+/* ==================================== */
+/* TIPOGRAFIA                           */
+/* ==================================== */
+h1 {
+  font-weight: 700;
+  font-family: $fonte-principal;
+}
+
+p {
+  line-height: 1.6;
+  color: $cor-cinza-texto;
+  font-family: $fonte-principal;
+}
+
+/* ==================================== */
+/* UTILITÁRIOS                           */
+/* ==================================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn-base {
+  padding: 0.75rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* ========================================================= */
+/* FRAMES: QUADROS DE ANIMAÇAO PARA CRIAR MOVIMENTOS DO CSS                      
+/* ==================================================== */
+
+// Frames: São quadros da animação, ou seja, estados diferentes no tempo que o CSS usa para criar movimento.
+@keyframes rainbow-pulse-green {
+  0% {
+    box-shadow: 0 0 10px $neon-verde-1, 0 0 20px $neon-verde-1;
+  }
+
+  50% {
+    box-shadow: 0 0 12px $neon-verde-2, 0 0 25px $neon-verde-2;
+  }
+
+  100% {
+    box-shadow: 0 0 10px $neon-verde-1, 0 0 20px $neon-verde-1;
+  }
+}
+
+@keyframes rainbow-pulse-blue {
+  0% {
+    box-shadow: 0 0 10px $neon-azul-1, 0 0 20px $neon-azul-1;
+  }
+
+  50% {
+    box-shadow: 0 0 12px $neon-azul-2, 0 0 25px $neon-azul-2;
+  }
+
+  100% {
+    box-shadow: 0 0 10px $neon-verde-1, 0 0 20px $neon-azul-1;
+  }
+}
