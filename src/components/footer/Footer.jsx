@@ -65,17 +65,28 @@ export default function Footer() {
             &copy; <span>2025 Médicos e Dentistas</span> pela Comunidade. Todos os direitos reservados.
           </p>
 
-          <a href="#header" className={S.btnScrollTop} title="Voltar ao topo">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24" height="24" viewBox="0 0 24 24"
-              fill="none" stroke="#f9f0f0" strokeWidth="2"
-              strokeLinecap="round" strokeLinejoin="round"
-            >
-              <path d="M8 6L12 2L16 6" />
-              <path d="M12 2V22" />
-            </svg>
-          </a>
+         <a 
+  href="#" // Mantém o comportamento de link (cursor pointer)
+  className={S.btnScrollTop} 
+  title="Voltar ao topo"
+  onClick={(e) => {
+    e.preventDefault(); // Evita que o # apareça na URL
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth" // Faz a subida ser suave (animada)
+    });
+  }}
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24" height="24" viewBox="0 0 24 24"
+    fill="none" stroke="#f9f0f0" strokeWidth="2"
+    strokeLinecap="round" strokeLinejoin="round"
+  >
+    <path d="M8 6L12 2L16 6" />
+    <path d="M12 2V22" />
+  </svg>
+</a>
         </div>
       </div>
     </footer>

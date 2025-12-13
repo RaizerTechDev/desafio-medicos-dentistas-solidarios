@@ -21,6 +21,8 @@
   align-items: center;
   gap: 0.8rem;
   padding-left: 8rem;
+   cursor: pointer;
+    transition: opacity 0.3s;
 
   &:hover {
     transform: translateZ(10px) scale(1.05);  
