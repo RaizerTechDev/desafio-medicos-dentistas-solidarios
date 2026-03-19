@@ -22,16 +22,13 @@
 
 <img height="480px" src="src/assets/desafio-medico-dentistas.png" />
 
-<br>
-<br>
-
-<br>
-<br>
+<br><br>
 
 🚀 Acesse o Projeto
 
 **🔗 [Clique aqui e conheça o Projeto Voluntario!!]()**
 
+</div>
 
 <br>
 
