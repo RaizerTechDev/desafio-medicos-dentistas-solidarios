@@ -6,6 +6,12 @@
 
 <div align="center">
 
+🎥Demonstração
+
+<img height="480px" src="./assets/img/minicrud.gif" alt="Demo ReciclaTech" />
+
+☁️ Deploy da API
+
 **🔗 [Clique aqui e conheça o Projeto Voluntario!!]()**
 
 <table>
