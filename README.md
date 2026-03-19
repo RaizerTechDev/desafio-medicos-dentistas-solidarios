@@ -20,7 +20,7 @@
 
 🎥Demonstração
 
-<img height="480px" src="src/assets/desafio-medico-dentistas.png" />
+<img height="480px" src="src/assets/medicos-dentistas-linkedln.gif" />
 
 <br><br>
 
