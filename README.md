@@ -2,18 +2,6 @@
 
 > **"Um projeto dedicado a oferecer atendimento médico e odontológico gratuito para pessoas que mais precisam na nossa comunidade."**
 
-<br>
-
-<div align="center">
-
-🎥Demonstração
-
-<img height="480px" src="./assets/img/minicrud.gif" alt="Demo ReciclaTech" />
-
-☁️ Deploy da API
-
-**🔗 [Clique aqui e conheça o Projeto Voluntario!!]()**
-
 <table>
   <tr>
     <td><img src="https://img.shields.io/badge/-REACT-E34F26?style=for-the-badge&logo=react&logoColor=white" alt="REACT" /></td>
@@ -26,6 +14,27 @@
 </table>
 
 <br>
+
+
+<div align="center">
+
+🎥Demonstração
+
+<img height="480px" src="src/assets/desafio-medico-dentistas.png" />
+
+<br>
+<br>
+
+<br>
+<br>
+
+☁️ Deploy da API
+
+**🔗 [Clique aqui e conheça o Projeto Voluntario!!]()**
+
+
+<br>
+
 <div align="left">
 
 ## 📄 Sobre o Projeto
